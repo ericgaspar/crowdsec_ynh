@@ -23,12 +23,12 @@ cscli:
   output: human
   color: auto
 db_config:
-  type:     mysql
+  type:     postgresql
   user:     __DB_USER__
   password: __DB_PWD__
   db_name:  __DB_NAME__
   host:     localhost
-  port:     3306
+  port:     5432
 
   flush:
     max_items: 5000
@@ -42,7 +42,7 @@ api:
     credentials_path: /etc/crowdsec/local_api_credentials.yaml
   server:
     log_level: info
-    listen_uri: 127.0.0.1:8080
+    listen_uri: 127.0.0.1:__PORT__
     profiles_path: /etc/crowdsec/profiles.yaml
     console_path: /etc/crowdsec/console.yaml
     online_client: # Central API credentials (to push signals and receive bad IPs)
